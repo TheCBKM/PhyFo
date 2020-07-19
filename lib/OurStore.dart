@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 class OurStore extends ChangeNotifier {
-  int view = 0;
+  int view = -1;
   String text = "";
 
   int get getVIew => view;

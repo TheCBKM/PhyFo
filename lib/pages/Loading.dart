@@ -4,26 +4,16 @@ class Loading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Please wait"),
+        body: Center(
+      child: SizedBox.expand(
+        child: Container(
+          padding: EdgeInsets.symmetric(
+              horizontal: (MediaQuery.of(context).size.height * 0.2),
+              vertical: (MediaQuery.of(context).size.width * 0.6)),
+          decoration: BoxDecoration(color: Colors.blueAccent),
+          child: CircularProgressIndicator(),
+        ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image(
-            height: MediaQuery.of(context).size.width/2,
-            image: AssetImage("assets/pf1.png"),
-          ),
-          Container(
-            height: 30,
-          ),
-          CircularProgressIndicator(),
-          Container(
-            height: 30,
-          ),
-          Text("PhyFo is Loading for you ....")
-        ],
-      ),
-    );
+    ));
   }
 }

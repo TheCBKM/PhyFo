@@ -21,6 +21,7 @@ class ServiceTile extends StatelessWidget {
           children: <Widget>[
             ListTile(
               leading: FadeInImage.memoryNetwork(
+                width: 100,
                 placeholder: kTransparentImage,
                 image: img,
               ),

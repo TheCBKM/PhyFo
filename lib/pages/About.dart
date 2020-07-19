@@ -9,7 +9,6 @@ class About extends StatelessWidget {
         padding: EdgeInsets.all(10),
         children: [
           ListTile(
-            hoverColor: Theme.of(context).accentColor,
             leading: Icon(
               Icons.check_box,
               color: Theme.of(context).accentColor,
@@ -20,7 +19,6 @@ class About extends StatelessWidget {
             ),
           ),
           ListTile(
-            hoverColor: Theme.of(context).accentColor,
             leading: Icon(
               Icons.check_box,
               color: Theme.of(context).accentColor,
@@ -31,7 +29,6 @@ class About extends StatelessWidget {
             ),
           ),
           ListTile(
-            hoverColor: Theme.of(context).accentColor,
             leading: Icon(
               Icons.check_box,
               color: Theme.of(context).accentColor,
@@ -42,7 +39,6 @@ class About extends StatelessWidget {
             ),
           ),
           ListTile(
-            hoverColor: Theme.of(context).accentColor,
             leading: Icon(
               Icons.check_box,
               color: Theme.of(context).accentColor,
@@ -53,7 +49,6 @@ class About extends StatelessWidget {
             ),
           ),
           ListTile(
-            hoverColor: Theme.of(context).accentColor,
             leading: Icon(
               Icons.check_box,
               color: Theme.of(context).accentColor,
@@ -64,7 +59,6 @@ class About extends StatelessWidget {
             ),
           ),
           ListTile(
-            hoverColor: Theme.of(context).accentColor,
             leading: Icon(
               Icons.check_box,
               color: Theme.of(context).accentColor,
@@ -83,7 +77,6 @@ class About extends StatelessWidget {
                 "In this COVID-19 pandemic we will use\nGloves\n3 layer mask\nhead cap\nface shield	gloves\nsanitized appron\nonline Virtual Treatments"),
           ),
           ListTile(
-            hoverColor: Theme.of(context).accentColor,
             leading: Icon(
               Icons.check_box,
               color: Theme.of(context).primaryColorDark,
@@ -94,7 +87,6 @@ class About extends StatelessWidget {
             ),
           ),
           ListTile(
-            hoverColor: Theme.of(context).accentColor,
             leading: Icon(
               Icons.check_box,
               color: Theme.of(context).primaryColorDark,
@@ -105,7 +97,6 @@ class About extends StatelessWidget {
             ),
           ),
           ListTile(
-            hoverColor: Theme.of(context).accentColor,
             leading: Icon(
               Icons.check_box,
               color: Theme.of(context).primaryColorDark,
@@ -116,7 +107,6 @@ class About extends StatelessWidget {
             ),
           ),
           ListTile(
-            hoverColor: Theme.of(context).accentColor,
             leading: Icon(
               Icons.check_box,
               color: Theme.of(context).primaryColorDark,
@@ -127,7 +117,6 @@ class About extends StatelessWidget {
             ),
           ),
           ListTile(
-            hoverColor: Theme.of(context).accentColor,
             leading: Icon(
               Icons.check_box,
               color: Theme.of(context).primaryColorDark,
@@ -138,7 +127,6 @@ class About extends StatelessWidget {
             ),
           ),
           ListTile(
-            hoverColor: Theme.of(context).accentColor,
             leading: Icon(
               Icons.check_box,
               color: Theme.of(context).primaryColorDark,
@@ -149,7 +137,6 @@ class About extends StatelessWidget {
             ),
           ),
           ListTile(
-            hoverColor: Theme.of(context).accentColor,
             leading: Icon(
               Icons.check_box,
               color: Theme.of(context).primaryColorDark,

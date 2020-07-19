@@ -79,7 +79,7 @@ class _MyFormState extends State<MyForm> {
                     Drop(widget.documents, drop),
                     TextFormField(
                         initialValue: "NA",
-                        keyboardType: TextInputType.streetAddress,
+                        keyboardType: TextInputType.multiline,
                         key: ValueKey("Address"),
                         validator: (val) {
                           if (val.isEmpty) {

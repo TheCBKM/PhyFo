@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:phyfo/OurStore.dart';
 import 'package:phyfo/pages/HomePage.dart';
 import 'package:phyfo/pages/Loading.dart';
-// import 'package:phyfo/pages/HomePage.dart';
 import 'package:provider/provider.dart';
 
 void main() {
