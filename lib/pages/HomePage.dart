@@ -1,10 +1,15 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:phyfo/OurStore.dart';
 import 'package:phyfo/pages/About.dart';
+import 'package:phyfo/pages/Help.dart';
+import 'package:phyfo/pages/IntroScreen.dart';
 import 'package:phyfo/pages/Order.dart';
 import 'package:phyfo/pages/Services.dart';
 import 'package:provider/provider.dart';
 import 'package:phyfo/pages/SplashScreen.Dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -13,10 +18,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   var tit = "";
+
   @override
   Widget build(BuildContext context) {
     int i = Provider.of<OurStore>(context).getVIew;
     Widget currentScreen;
+
     if (i == 0) {
       currentScreen = Services();
       tit = "Services";
@@ -24,16 +31,28 @@ class _HomePageState extends State<HomePage> {
       currentScreen = Order();
       tit = "Book ";
     } else if (i == -1)
-      currentScreen = SplashScreen();
+      currentScreen = IntroScreen();
     else {
       currentScreen = About();
       tit = "About";
     }
+
     print(i);
     return Scaffold(
       appBar: i == -1
           ? null
           : AppBar(
+              actions: <Widget>[
+                IconButton(
+                  icon: Icon(Icons.help),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Help()),
+                    );
+                  },
+                )
+              ],
               title: Text("PhyFo: ${tit}"),
             ),
       body: currentScreen,

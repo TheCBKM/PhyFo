@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:phyfo/Widgets/MyForm.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class Order extends StatefulWidget {
   @override
@@ -26,12 +27,16 @@ class _OrderState extends State<Order> {
       setState(() {
         _isLoading = true;
       });
-      await Firestore.instance.collection("orders").document(uid).setData({
+      await Firestore.instance
+          .collection("orders")
+          .document(Timestamp.now().toDate().toString())
+          .setData({
         'name': name,
         'phone': phone,
         'prob': address,
         'problem': problem,
-        'time': Timestamp.now()
+        'time': Timestamp.now(),
+        "uid": uid,
       });
       setState(() {
         _isLoading = false;
@@ -94,9 +99,20 @@ class _OrderState extends State<Order> {
                               )
                             ],
                           ),
-                        !_isLoading
-                            ? MyForm(submitFn, documents)
-                            : Center(child: CircularProgressIndicator()),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        !_isDone
+                            ? !_isLoading
+                                ? MyForm(submitFn, documents)
+                                : Center(child: CircularProgressIndicator())
+                            : Center(
+                                child: Image.asset(
+                                  "assets/done.png",
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.8,
+                                ),
+                              )
                       ],
                     ),
                   );
