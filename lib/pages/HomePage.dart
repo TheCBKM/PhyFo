@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:phyfo/OurStore.dart';
 import 'package:phyfo/pages/About.dart';
@@ -9,7 +7,6 @@ import 'package:phyfo/pages/Order.dart';
 import 'package:phyfo/pages/Services.dart';
 import 'package:provider/provider.dart';
 import 'package:phyfo/pages/SplashScreen.Dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -31,6 +28,8 @@ class _HomePageState extends State<HomePage> {
       currentScreen = Order();
       tit = "Book ";
     } else if (i == -1)
+      currentScreen = SplashScreen();
+    else if (i == -2)
       currentScreen = IntroScreen();
     else {
       currentScreen = About();
@@ -39,7 +38,7 @@ class _HomePageState extends State<HomePage> {
 
     print(i);
     return Scaffold(
-      appBar: i == -1
+      appBar: i <= -1
           ? null
           : AppBar(
               actions: <Widget>[
@@ -56,13 +55,13 @@ class _HomePageState extends State<HomePage> {
               title: Text("PhyFo: ${tit}"),
             ),
       body: currentScreen,
-      bottomNavigationBar: i != -1
+      bottomNavigationBar: i > -1
           ? BottomNavigationBar(
               selectedItemColor: Theme.of(context).accentColor,
               onTap: (val) {
                 Provider.of<OurStore>(context, listen: false).changeView(val);
               },
-              currentIndex: i,
+              currentIndex: i >= -1 ? i : 0,
               items: [
                 BottomNavigationBarItem(
                   title: Text("Services"),

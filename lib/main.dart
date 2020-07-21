@@ -5,7 +5,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:phyfo/OurStore.dart';
 import 'package:phyfo/pages/HomePage.dart';
-import 'package:phyfo/pages/Loading.dart';
+import "package:phyfo/pages/SplashScreen.Dart";
 import 'package:provider/provider.dart';
 
 void main() {
@@ -23,7 +23,8 @@ class MyApp extends StatelessWidget {
       title: 'PhyFo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        accentColor: Colors.amber,
+        primaryColor: Color.fromRGBO(0, 152, 158, 1),
+        accentColor: Colors.amber[700],
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: ChangeNotifierProvider(
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
             stream: FirebaseAuth.instance.onAuthStateChanged,
             builder: (ctx, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting)
-                return Loading();
+                return SplashScreen();
               if (snapshot.hasData) return HomePage();
               fbm.getToken().then(print);
               fbm.requestNotificationPermissions();
@@ -49,7 +50,7 @@ class MyApp extends StatelessWidget {
               });
               _auth.signInAnonymously();
               print("anaomously");
-              return Loading();
+              return SplashScreen();
             },
           )),
     );

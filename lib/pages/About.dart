@@ -30,9 +30,15 @@ class About extends StatelessWidget {
                   SizedBox(
                     height: 30,
                   ),
-                  Text(
-                    'PhyFo is an App-based innovative application that enables you to find your physiotherapist and get the best solution for your sufferings at the COMFORT OF YOUR HOME.\n\nWe provide individualized treatments and comprehensive action plans for all our patients. Our team will help you know your problem and solution in the language you understand, no more heavy medical terms to scare you.\n\nWe strive on correcting the actual cause of pain and provide a long-lasting solution to your problem.\n\nWith PhyFo, you get your individualized treatment protocol, specified exercise videos are made available which you can refer anytime on your profile and get constant follow-ups from the expert physiotherapist and can send feedback as well.\n\nYou can also put your problem-related query in our Free Health Advice column to get a generalized view.\n\nWe believe in Precautions better than cure, BE ONE STEP AHEAD AND CHOOSE PhyFo 😊',
-                  ),
+                  Text('''
+✓ PhyFo is an innovative tool that enables you to find your physiotherapist and get the best solution for your sufferings at the COMFORT OF YOUR HOME.\n
+✓ We provide individualised treatments and comprehensive action plans for all our patients with better understandings.\n 
+✓ We strive on correcting the actual cause of pain and provide a long lasting solution to your problem\n.
+✓ With PhyFo, you get your specified exercise videos on your profile.\n 
+✓ You get constant follow ups from the expert physiotherapist.\n
+✓ Free Health Advise column for problem related queries.\n 
+✓ At affordable prices.\n
+✓ We believe in Precautions better than cure, BE ONE STEP AHEAD AND CHOOSE PhyFo 😊\n\n''')
                 ],
               ),
             ),
@@ -59,8 +65,7 @@ class About extends StatelessWidget {
                   SizedBox(
                     height: 30,
                   ),
-                  ButtonBar(
-                    alignment: MainAxisAlignment.center,
+                  Column(
                     children: <Widget>[
                       FlatButton.icon(
                         onPressed: () async {
@@ -71,8 +76,13 @@ class About extends StatelessWidget {
                             throw 'Could not launch $url';
                           }
                         },
-                        icon: Icon(Icons.phone),
-                        label: Text("Call Us"),
+                        icon: Icon(Icons.phone,
+                            color: Theme.of(context).primaryColor),
+                        label: Text(
+                          "Call Us",
+                          style:
+                              TextStyle(color: Theme.of(context).primaryColor),
+                        ),
                       ),
                       FlatButton.icon(
                         onPressed: () async {
@@ -84,8 +94,13 @@ class About extends StatelessWidget {
                             throw 'Could not launch $url';
                           }
                         },
-                        icon: Icon(Icons.launch),
-                        label: Text("WhatsApp"),
+                        icon: Icon(Icons.launch,
+                            color: Theme.of(context).primaryColor),
+                        label: Text(
+                          "WhatsApp",
+                          style:
+                              TextStyle(color: Theme.of(context).primaryColor),
+                        ),
                       ),
                       FlatButton.icon(
                         onPressed: () async {
@@ -97,7 +112,8 @@ class About extends StatelessWidget {
                             throw 'Could not launch $url';
                           }
                         },
-                        icon: Icon(Icons.insert_emoticon),
+                        icon: Icon(Icons.insert_emoticon,
+                            color: Theme.of(context).primaryColor),
                         label: Text("Instagram"),
                       ),
                       FlatButton.icon(
@@ -110,8 +126,36 @@ class About extends StatelessWidget {
                             throw 'Could not launch $url';
                           }
                         },
-                        icon: Icon(Icons.message),
+                        icon: Icon(Icons.message,
+                            color: Theme.of(context).primaryColor),
                         label: Text("FaceBook"),
+                      ),
+                      FlatButton.icon(
+                        onPressed: () async {
+                          const url =
+                              'https://www.youtube.com/channel/UC9ho59o_8YkQe6X37KWDf7w?disable_polymer=true';
+                          if (await canLaunch(url)) {
+                            await launch(url);
+                          } else {
+                            throw 'Could not launch $url';
+                          }
+                        },
+                        icon: Icon(Icons.videocam,
+                            color: Theme.of(context).primaryColor),
+                        label: Text("YouTube"),
+                      ),
+                      FlatButton.icon(
+                        onPressed: () async {
+                          const url = 'https://twitter.com/ForcePhysio';
+                          if (await canLaunch(url)) {
+                            await launch(url);
+                          } else {
+                            throw 'Could not launch $url';
+                          }
+                        },
+                        icon: Icon(Icons.brightness_1,
+                            color: Theme.of(context).primaryColor),
+                        label: Text("Twitter"),
                       )
                     ],
                   ),
@@ -155,7 +199,9 @@ class About extends StatelessWidget {
                         ),
                         label: Text(
                           "Call Us",
-                          style: TextStyle(fontSize: 12),
+                          style: TextStyle(
+                              fontSize: 12,
+                              color: Theme.of(context).primaryColor),
                         ),
                       ),
                       FlatButton.icon(
@@ -174,7 +220,9 @@ class About extends StatelessWidget {
                         ),
                         label: Text(
                           "WhatsApp",
-                          style: TextStyle(fontSize: 12),
+                          style: TextStyle(
+                              fontSize: 12,
+                              color: Theme.of(context).primaryColor),
                         ),
                       ),
                       FlatButton.icon(
@@ -190,7 +238,10 @@ class About extends StatelessWidget {
                           Icons.open_in_new,
                           size: 12,
                         ),
-                        label: Text("CBKM.IN", style: TextStyle(fontSize: 12)),
+                        label: Text("CBKM.IN",
+                            style: TextStyle(
+                                fontSize: 12,
+                                color: Theme.of(context).primaryColor)),
                       ),
                     ],
                   ),

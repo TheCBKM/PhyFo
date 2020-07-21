@@ -1,10 +1,7 @@
-import 'dart:ffi';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:phyfo/Widgets/MyForm.dart';
-import 'package:transparent_image/transparent_image.dart';
 
 class Order extends StatefulWidget {
   @override
@@ -53,7 +50,10 @@ class _OrderState extends State<Order> {
           uid = future.data.uid;
           print(future.data.uid);
           return StreamBuilder(
-              stream: Firestore.instance.collection("Services").snapshots(),
+              stream: Firestore.instance
+                  .collection("Services")
+                  .orderBy("p", descending: false)
+                  .snapshots(),
               builder: (context, snapshot) {
                 if (future.connectionState == ConnectionState.waiting) {
                   return Center(child: CircularProgressIndicator());

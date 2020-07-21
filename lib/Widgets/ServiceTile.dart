@@ -36,15 +36,25 @@ class ServiceTile extends StatelessWidget {
             ButtonBar(
               children: <Widget>[
                 FlatButton.icon(
-                  icon: Icon(Icons.bookmark),
-                  label: Text("Book appointment"),
+                  icon: Icon(Icons.bookmark,
+                      color: Theme.of(context).primaryColor),
+                  label: Text(
+                    "Book appointment",
+                    style: TextStyle(color: Theme.of(context).primaryColor),
+                  ),
                   onPressed: () {
                     Provider.of<OurStore>(context, listen: false).changeView(1);
                   },
                 ),
                 FlatButton.icon(
-                  icon: Icon(Icons.search),
-                  label: Text("Read More"),
+                  icon: Icon(
+                    Icons.search,
+                    color: Theme.of(context).primaryColor,
+                  ),
+                  label: Text(
+                    "Read More",
+                    style: TextStyle(color: Theme.of(context).primaryColor),
+                  ),
                   onPressed: () {
                     _btmsheet(context);
                   },
@@ -72,7 +82,7 @@ class ServiceTile extends StatelessWidget {
                       Text(
                         title,
                         style: TextStyle(
-                            color: Theme.of(context).primaryColorDark,
+                            color: Theme.of(context).primaryColor,
                             fontSize: 15),
                       ),
                       IconButton(

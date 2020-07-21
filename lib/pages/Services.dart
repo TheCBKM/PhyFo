@@ -8,7 +8,10 @@ class Services extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         child: StreamBuilder(
-            stream: Firestore.instance.collection("Services").snapshots(),
+            stream: Firestore.instance
+                .collection("Services")
+                .orderBy("p", descending: false)
+                .snapshots(),
             builder: (ctx, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return Center(child: CircularProgressIndicator());

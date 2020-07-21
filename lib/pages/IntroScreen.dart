@@ -3,6 +3,7 @@ import 'package:intro_slider/intro_slider.dart';
 import 'package:intro_slider/slide_object.dart';
 import 'package:phyfo/OurStore.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class IntroScreen extends StatefulWidget {
   @override
@@ -47,8 +48,12 @@ class _IntroScreenState extends State<IntroScreen> {
     );
   }
 
-  void onDonePress() {
+  void onDonePress() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool _seen = (prefs.getBool('seen') ?? false);
+    print(_seen);
     Provider.of<OurStore>(context, listen: false).changeView(0);
+    prefs.setBool('seen', true);
   }
 
   @override
